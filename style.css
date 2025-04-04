@@ -2,25 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 100%); /* Deep blue gradient */
+    color: #e2e8f0; /* Light gray for contrast */
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .navbar {
-    background: #1a1a1a;
+    background: rgba(10, 25, 47, 0.95); /* Semi-transparent deep blue */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 20px 60px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px); /* Glass effect */
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -29,128 +39,213 @@
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 35px;
 }
 
 .nav-links a {
-    color: white;
+    color: #ccd6f6;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #e63946;
+    color: #ff6f61;
 }
 
 .hero {
     height: 100vh;
-    background: url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+    background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48') no-repeat center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Overlay for readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: 60px;
+    font-weight: 700;
     margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .btn {
-    background: #e63946;
+    background: #ff6f61;
     color: white;
-    padding: 12px 25px;
+    padding: 14px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+    border-radius: 50px; /* Rounded modern look */
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: #d90429;
+    background: #e65b50;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
 }
 
-.about, .services, .gallery, .contact {
-    padding: 80px 50px;
-    text-align: center;
+.about, .services, .membership, .gallery, .contact {
+    padding: 100px 60px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle white overlay */
+    border-radius: 20px;
+    margin: 20px;
 }
 
 h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #1a1a1a;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #ff6f61; /* Fiery orange for headings */
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.service-grid, .gallery-grid {
+.service-grid, .membership-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
     margin-top: 20px;
 }
 
-.service-card {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+.service-card, .plan-card {
+    background: #1e3a8a; /* Modern blue */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
+.service-card:hover, .plan-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
+.service-card h3, .plan-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ff6f61;
+}
+
+.plan-card .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ccd6f6;
+    margin: 15px 0;
+}
+
+.gallery-slider {
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-track {
+    display: flex;
+    animation: scroll 20s linear infinite; /* Auto-scroll */
+}
+
+.gallery-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-track img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Halfway scroll for seamless loop */
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .contact-form input, .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
     font-size: 16px;
+    background: #1e3a8a;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background: #2b4b9e;
+    outline: none;
 }
 
 .contact-form textarea {
-    height: 100px;
+    height: 150px;
 }
 
 footer {
-    background: #1a1a1a;
-    color: white;
+    background: #0a192f;
+    color: #ccd6f6;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    font-weight: 400;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        padding: 15px;
+        padding: 20px;
     }
     .nav-links {
-        margin-top: 15px;
+        margin-top: 20px;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 40px;
     }
     .hero-content p {
-        font-size: 16px;
+        font-size: 18px;
+    }
+    .about, .services, .membership, .gallery, .contact {
+        padding: 60px 20px;
+        margin: 10px;
+    }
+    .gallery-track img {
+        width: 250px;
     }
 }
