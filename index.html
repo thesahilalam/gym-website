@@ -2,18 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FitZone Gym</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; }
-        .header { background: #333; color: white; text-align: center; padding: 20px; }
-        .btn { background: #ff4500; color: white; padding: 10px 20px; text-decoration: none; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym - Get Stronger Today</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome to FitZone Gym</h1>
-        <p>Your Fitness Journey Starts Here!</p>
-        <a href="#contact" class="btn">Join Now</a>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">PowerFit Gym</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Unleash Your Strength</h1>
+            <p>Join PowerFit Gym and transform your body today!</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>PowerFit Gym is your ultimate destination for fitness. With state-of-the-art equipment, expert trainers, and a motivating environment, we help you achieve your goals.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Weight Training</h3>
+                <p>Build muscle with our advanced equipment.</p>
+            </div>
+            <div class="service-card">
+                <h3>Cardio Zone</h3>
+                <p>Burn calories with top-notch cardio machines.</p>
+            </div>
+            <div class="service-card">
+                <h3>Group Classes</h3>
+                <p>Join yoga, Zumba, and more with our community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="https://via.placeholder.com/300" alt="Gym Equipment">
+            <img src="https://via.placeholder.com/300" alt="Workout Session">
+            <img src="https://via.placeholder.com/300" alt="Gym Interior">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+        <p>Location: 123 Fitness Street, City | Phone: (123) 456-7890</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PowerFit Gym. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
